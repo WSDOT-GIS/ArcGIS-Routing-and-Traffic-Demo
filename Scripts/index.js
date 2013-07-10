@@ -18,12 +18,11 @@ require(["dojo/on",
 	"esri/tasks/FeatureSet",
 	"esri/units",
 	"dojo/_base/connect",
-	"wsdot/tasks/intersectionLocator",
-	"esri/dijit/Attribution"],
+	"esri/tasks/locator"],
 	function (on, urlUtils, Map, Point, GraphicsLayer, RouteTask, SimpleRenderer, SimpleMarkerSymbol,
 		SimpleLineSymbol, Graphic, InfoTemplate, Basemap, BasemapLayer, ArcGISDynamicMapServiceLayer,
 		RouteParameters, FeatureSet, Units, connect,
-		IntersectionLocator) {
+		Locator) {
 		"use strict";
 		var map, locator, routeTask, stopsLayer, routesLayer, protocol, trafficLayer;
 
@@ -136,7 +135,7 @@ require(["dojo/on",
 			map.addLayer(routesLayer);
 
 			// Setup the locator.
-			locator = new IntersectionLocator(protocol + "ReverseGeocodeIntersection.ashx");
+			locator = new Locator(protocol + "//geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer");
 			locator.setOutSpatialReference(map.spatialReference);
 			
 
@@ -146,7 +145,7 @@ require(["dojo/on",
 			// Setup the map click event that will call the geocoder service.
 			map.on("click", function (evt) {
 				if (evt.mapPoint) {
-					locator.locationToIntersection(evt.mapPoint, 10, function (/*esri.tasks.AddressCandidate*/ addressCandidate) {
+					locator.locationToAddress(evt.mapPoint, 10, function (/*esri.tasks.AddressCandidate*/ addressCandidate) {
 						var graphic = new Graphic();
 						graphic.setGeometry(addressCandidate.location);
 						graphic.setAttributes({
