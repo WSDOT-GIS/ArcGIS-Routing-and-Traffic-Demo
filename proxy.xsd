@@ -10,8 +10,14 @@
 								<xs:complexType>
 									<xs:attribute name="url" type="xs:string" use="required" />
 									<xs:attribute name="matchAll" type="xs:boolean" use="required" />
-									<xs:attribute name="token" type="xs:string" use="optional" />
-									<xs:attribute name="dynamicToken" type="xs:boolean" use="optional" />
+									<xs:attribute name="username" type="xs:string" use="optional" />
+									<xs:attribute name="password" type="xs:string" use="optional" />
+									<xs:attribute name="clientId" type="xs:string" use="optional" />
+									<xs:attribute name="clientSecret" type="xs:string" use="optional" />
+									<xs:attribute name="oauthEndpoint" type="xs:anyURI" use="optional" />
+									<xs:attribute name="accessToken" type="xs:string" use="optional" />
+									<xs:attribute name="rateLimit" type="xs:integer" use="optional" />
+									<xs:attribute name="rateLimitPeriod" type="xs:integer" use="optional" />
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
@@ -19,6 +25,7 @@
 				</xs:element>
 			</xs:sequence>
 			<xs:attribute name="mustMatch" type="xs:boolean" use="required" />
+			<xs:attribute name="allowedReferrers" type="xs:string" use="optional" />
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
