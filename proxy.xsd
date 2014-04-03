@@ -25,7 +25,7 @@
 				</xs:element>
 			</xs:sequence>
 			<xs:attribute name="mustMatch" type="xs:boolean" use="required" />
-			<xs:attribute name="allowedReferrers" type="xs:string" use="optional" />
+			<xs:attribute name="allowedReferers" type="xs:string" use="optional" />
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
