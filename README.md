@@ -4,8 +4,8 @@ A test of calling secure services.
 
 ## Getting started ##
 
-1. Create a copy of `Sample.Web.Config` and call it `Web.Config`.
-2. Provide values for the `agolUser` and `agolPassword` settings in `Web.Config`.
+1. Create a copy of `sample.proxy.config` and call it `proxy.config`.
+2. Provide values for the `agolUser` and `agolPassword` settings in `proxy.config`.
 3. Set the project to use IIS Express.
 4. Set the _SSL Enabled_ property to _True_. This will populate the _SSL URL_ property.
 5. Open the project properties window.

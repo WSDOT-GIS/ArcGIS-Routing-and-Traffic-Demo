@@ -107,9 +107,6 @@ require(["dojo/on",
 				}
 			});
 
-
-			
-
 			// Disable zooming on map double-click.  Double click will be used to create a route.
 			map.disableDoubleClickZoom();
 
