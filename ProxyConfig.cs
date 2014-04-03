@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.Configuration;
 using System.Diagnostics;
@@ -8,7 +9,6 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Caching;
 using System.Xml.Serialization;
-using SS = ServiceStack.Text;
 
 namespace Proxy
 {
@@ -191,11 +191,10 @@ namespace Proxy
 #if DEBUG
 				Trace.TraceInformation("Response from token request: {0}", json); 
 #endif
-				var serializer = new SS.JsonSerializer<Token>();
 				Token token;
 				try
 				{
-					token = serializer.DeserializeFromString(json);
+					token = JsonConvert.DeserializeObject<Token>(json);
 				}
 				catch (SerializationException ex)
 				{
