@@ -14,8 +14,3 @@ A test of calling secure services.
 ## Development environment ##
 
 This project was created in Visual Studio 2012.
-
-## License ##
-Licensed under [The MIT License](http://opensource.org/licenses/MIT). See the [LICENSE] file for details.
-
-[LICENSE]:LICENSE
